@@ -1,0 +1,33 @@
+{
+  "name": "baskof147/yii2-omnicell",
+  "description": "This extension allows SMS sending via omnicell SMS provider",
+  "link": "https://docs.omnicell.com.ua/en/links.html",
+  "type": "yii2-extension",
+  "require": {
+    "yiisoft/yii2": "^2.0",
+    "yiisoft/yii2-httpclient": "^2.0",
+    "mikk150/yii2-sms": "~1.0.0"
+  },
+  "require-dev": {
+    "yiisoft/yii2-coding-standards": "^2.0",
+    "codeception/codeception": "^2.3"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ilya Loginov",
+      "email": "ilyalogi2014@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "baskof147\\omnicell\\": "src"
+    }
+  }
+}
