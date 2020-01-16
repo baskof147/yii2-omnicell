@@ -76,7 +76,6 @@ class Provider extends BaseProvider
                 ->setFormat(Client::FORMAT_XML);
         }
         $responses = $this->getClient()->batchSend($requests);
-        var_dump($responses);die;
         $messagesSent = true;
         foreach ($responses as $response) {
             if (strpos($response->content, 'Accepted') === false) {
