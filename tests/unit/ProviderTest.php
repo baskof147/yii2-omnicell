@@ -22,7 +22,11 @@ class ProviderTest extends \Codeception\Test\Unit
                 'batchSend' => function () {
                     return [
                         $this->make(Response::class, [
-                            'getContent' => '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><status id="6614704225266" date="Mon, 21 Oct 2019 12:53:27 +0300"><state>Accepted</state></status>'
+                            'getContent' => '<?xml version="1.0" encoding="utf-8"?>
+<message>
+<state code="ACCEPT" date="22.05.2009 15:33:21">Message accepted for delivery</state>
+<reference>33DF12</reference>
+</message>'
                         ])
                     ];
                 }
@@ -41,7 +45,11 @@ class ProviderTest extends \Codeception\Test\Unit
                 'batchSend' => function () {
                     return [
                         $this->make(Response::class, [
-                            'getContent' => '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><status id="6614704225266" date="Mon, 21 Oct 2019 12:53:27 +0300"><state>Rejected</state></status>'
+                            'getContent' => '<?xml version="1.0" encoding="utf-8"?>
+<message>
+<state code="INVREQ" date="22.05.2009 15:33:21">Message accepted for delivery</state>
+<reference>33DF12</reference>
+</message>'
                         ])
                     ];
                 }
