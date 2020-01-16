@@ -50,7 +50,7 @@ class Provider extends BaseProvider
                     Client::FORMAT_XML => [
                         'class' => XmlFormatter::class,
                         'encoding' => 'UTF-8',
-                        'contentType' => 'text/xml',
+                        'contentType' => 'application/vnd.alt+xml',
                         'rootTag' => 'message'
                     ],
                 ],
@@ -67,14 +67,16 @@ class Provider extends BaseProvider
         $requests = [];
         foreach ((array) $message->getTo() as $recipient) {
             $requests[] = $this->getClient()->post('', [
-                'to' => $recipient,
-                'body' => $message->getBody()
+                'da' => $recipient,
+                'text' => $message->getBody(),
+                'oa' => $message->getFrom()
             ], [
                 'Authorization' => 'Basic ' . base64_encode($this->username . ':' . $this->password)
             ])
                 ->setFormat(Client::FORMAT_XML);
         }
         $responses = $this->getClient()->batchSend($requests);
+        var_dump($responses);die;
         $messagesSent = true;
         foreach ($responses as $response) {
             if (strpos($response->content, 'Accepted') === false) {
