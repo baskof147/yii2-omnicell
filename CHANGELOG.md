@@ -1,6 +1,10 @@
 Under development
 -----------------------------------------------
 
+1.1.1 (2020-01-16)
+-----------------------------------------------
+- Hotfix: Fixed unit tests
+
 1.1 (2020-01-16)
 -----------------------------------------------
 - Feature: Added whole message string to log when message were not sent, added new xml format message sending (Ilya)
