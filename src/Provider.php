@@ -78,7 +78,7 @@ class Provider extends BaseProvider
         $responses = $this->getClient()->batchSend($requests);
         $messagesSent = true;
         foreach ($responses as $response) {
-            if (strpos($response->content, 'Accepted') === false) {
+            if (strpos($response->content, 'ACCEPT') === false) {
                 Yii::error('Error response: "' . $response->content . '". Message: ' . $message->toString(), 'number');
                 $messagesSent = false;
             }
